@@ -32,3 +32,19 @@ anagramTester("saint", "satin", true);
 anagramTester("chunk", "monk", false);
 anagramTester("elephant", "boss", false);
 anagramTester("saint", "satin sheet", false);
+
+/*
+My thoughts on this problem:
+We've got firstWord and secondWord. Both need to be fed into arrays like so:
+
+const firstArray = firstWord.slice();
+const secondArray = secondWord.slice();
+
+From here, we need a function that reads through each value in firstArray and runs
+a find() against secondArray. This would knock out the first match each time. We'd
+need to remove the matched value from secondArray with each loop. If all of firstArray's
+values found a match in secondArray, isAnAnagram could return true.
+
+This doesn't cover factors like one array having more values than the other, but the tests
+don't consider that, either. That's where I'm at right now.
+*/
