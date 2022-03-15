@@ -1,7 +1,22 @@
 class AnagramHelper {
+  private isFirstWordAnAnagramOfSecondWord(firstArray: string[], secondArray: string[]): boolean {
+    // HOMEWORK: refactor and use function within isAnAnagram (encapsulation)
+     let firstArrayPassed = true;
+    if (firstArray.every((w) => secondArray.includes(w))) {
+      // Show if first word passes anagram test through console
+      console.log("Found all letters of " + firstWord + " in " + secondWord);
+    } else {
+      firstArrayPassed = false;
+      // Show if first word does not pass anagram test through console
+      console.log(
+        "Did not find all letters of " + firstWord + " in " + secondWord
+      );
+    }
 
-    public isAnAnagram(firstWord: string, secondWord: string): boolean {
-        /*
+  }
+  public isAnAnagram(firstWord: string, secondWord: string): boolean {
+    
+    /*
         Algorithm confirm that both strings have same letters by comparing 
         first word to second and removing letters that are the same from both words 
 
@@ -12,16 +27,52 @@ class AnagramHelper {
           - You can meetup and do some pair programming on your own.
           - (Recursion may make the solution simpler. But if it's confusing, there are other ways. Don't beat yourself up.)
         */
+
+    // Split string by character
+    const firstArray = firstWord.split('');
+    const secondArray = secondWord.split('');
+
+    // Show how the firstword and secondword have transformed into arrays
+    console.log(firstArray, secondArray);
+
+    // Store value of first array comparison to second array
+    let firstArrayPassed = true;
+    if (firstArray.every((w) => secondArray.includes(w))) {
+      // Show if first word passes anagram test through console
+      console.log("Found all letters of " + firstWord + " in " + secondWord);
+    } else {
+      firstArrayPassed = false;
+      // Show if first word does not pass anagram test through console
+      console.log(
+        "Did not find all letters of " + firstWord + " in " + secondWord
+      );
     }
+
+    // Store value of second array comparison to first aray
+    let secondArrayPassed = true;
+    if (secondArray.every((w) => firstArray.includes(w))) {
+      //Show if second word passes anagram test through console
+      console.log("Found all letters of " + secondWord + " in " + firstWord);
+    } else {
+      secondArrayPassed = false;
+      // Show if second word does not pass anagram test through console
+      console.log(
+        "Did not find all letters of " + secondWord + " in " + firstWord
+      );
+    }
+    
+
+    return firstArrayPassed && secondArrayPassed;
+
+      
+  } 
 }
 
 function anagramTester(word1: string, word2: string, expected: boolean) {
-    let helper: AnagramHelper = new AnagramHelper();
-    
-    if (helper.isAnAnagram(word1, word2) == expected)
-        console.log("Success!\n");
-    else
-        console.log("Failure!\n");    
+  let helper: AnagramHelper = new AnagramHelper();
+
+  if (helper.isAnAnagram(word1, word2) == expected) console.log("Success!\n");
+  else console.log("Failure!\n");
 }
 
 anagramTester("act", "cat", true);
@@ -48,16 +99,3 @@ values found a match in secondArray, isAnAnagram could return true.
 This doesn't cover factors like one array having more values than the other, but the tests
 don't consider that, either. That's where I'm at right now.
 */
-
-// sample words 
-let firstWord = "domes"; 
-let secondWord = "mode";
-
-// split words into arrays of individual letters
-const firstArray = firstWord.split(''); 
-const secondArray = secondWord.split('');
-
-// log arrays in console for user to see
-console.log(firstArray, secondArray);
-
-// 
