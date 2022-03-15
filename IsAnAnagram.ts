@@ -48,3 +48,16 @@ values found a match in secondArray, isAnAnagram could return true.
 This doesn't cover factors like one array having more values than the other, but the tests
 don't consider that, either. That's where I'm at right now.
 */
+
+// sample words 
+let firstWord = "domes"; 
+let secondWord = "mode";
+
+// split words into arrays of individual letters
+const firstArray = firstWord.split(''); 
+const secondArray = secondWord.split('');
+
+// log arrays in console for user to see
+console.log(firstArray, secondArray);
+
+// 
