@@ -1,6 +1,7 @@
 class AnagramHelper {
   private isFirstWordAnAnagramOfSecondWord(firstArray: string[], secondArray: string[]): boolean {
-    // HOMEWORK: refactor and use function within isAnAnagram (encapsulation)
+    
+    // HOMEWORK 3/15: refactor an use function within isAnAnagram (encapsulation)
      let firstArrayPassed = true;
     if (firstArray.every((w) => secondArray.includes(w))) {
       // Show if first word passes anagram test through console
