@@ -1,7 +1,7 @@
 class AnagramHelper {
   private isFirstWordAnAnagramOfSecondWord(firstArray: string[], secondArray: string[]): boolean {
     
-    // HOMEWORK 3/15/22: refactor an use function within isAnAnagram (encapsulation)
+    // HOMEWORK 3/15: refactor an use function within isAnAnagram (encapsulation)
      let firstArrayPassed = true;
     if (firstArray.every((w) => secondArray.includes(w))) {
       // Show if first word passes anagram test through console
@@ -100,3 +100,4 @@ values found a match in secondArray, isAnAnagram could return true.
 This doesn't cover factors like one array having more values than the other, but the tests
 don't consider that, either. That's where I'm at right now.
 */
+
