@@ -1,16 +1,33 @@
 class AnagramHelper {
-    isAnAnagram(firstWord, secondWord) {
-        /*
-            Algorithm confirm that both strings have same letters by comparing
-            first word to second and removing letters that are the same from both words
+  private isFirstWordAnAnagramOfSecondWord(firstArray: string[], secondArray: string[]): boolean {
     
-            Homework: Finish writing the algorithm. Start using data structures and control flow structures in your algorithm.
-              - Remember: You don't have to get all the way there in a single leap. You can do it a piece at a time.
-              - Also: Strings are arrays of characters, or at least can be looked at as an array of characters. Arrays are data structures.
-              - You will likely have to use some placeholder variables of some kind, because modifying arrays that you're looping over causes problems.
-              - You can meetup and do some pair programming on your own.
-              - (Recursion may make the solution simpler. But if it's confusing, there are other ways. Don't beat yourself up.)
-            */
+    // HOMEWORK 3/15/22: refactor an use function within isAnAnagram (encapsulation)
+     let firstArrayPassed = true;
+    if (firstArray.every((w) => secondArray.includes(w))) {
+      // Show if first word passes anagram test through console
+      console.log("Found all letters of " + firstWord + " in " + secondWord);
+    } else {
+      firstArrayPassed = false;
+      // Show if first word does not pass anagram test through console
+      console.log(
+        "Did not find all letters of " + firstWord + " in " + secondWord
+      );
+    }
+
+  }
+  public isAnAnagram(firstWord: string, secondWord: string): boolean {
+    
+    /*
+        Algorithm confirm that both strings have same letters by comparing 
+        first word to second and removing letters that are the same from both words 
+
+        Homework: Finish writing the algorithm. Start using data structures and control flow structures in your algorithm.
+          - Remember: You don't have to get all the way there in a single leap. You can do it a piece at a time.
+          - Also: Strings are arrays of characters, or at least can be looked at as an array of characters. Arrays are data structures. 
+          - You will likely have to use some placeholder variables of some kind, because modifying arrays that you're looping over causes problems. 
+          - You can meetup and do some pair programming on your own.
+          - (Recursion may make the solution simpler. But if it's confusing, there are other ways. Don't beat yourself up.)
+        */
         // Split string by character
         const firstArray = firstWord.split('');
         const secondArray = secondWord.split('');
